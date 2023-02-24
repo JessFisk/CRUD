@@ -1,11 +1,11 @@
 const { Router } = require("express");
 const DVDRouter = Router();
 
-const { getallDVDs, addDVD, updateDVDactor, deleteDVD } = require("./controllers");
+const { getallDVDs, addDVD, updateDVD, deleteDVD } = require("./controllers");
 
 DVDRouter.get("/DVD/getallDVDs", getallDVDs);
 DVDRouter.post("/DVD/addDVD", addDVD);
-DVDRouter.put("/DVD/updateDVDactor", updateDVDactor);
+DVDRouter.put("/DVD/updateDVD", updateDVD);
 DVDRouter.delete("/DVD/deleteDVD", deleteDVD);
 
 
