@@ -12,10 +12,8 @@ const port = 5001;
 
 
 app.use(DVDRouter);
-// app.use(actorRouter);
-// app.use(userRouter);
 
-/// Add/ Insert function//////////////////////////////////////////////////////
+/////////////////// Add/Insert function////////////////////////////////////////////
 // app.post("/DVD/addDVD", async (request, response) => {
 //     const newDVD = await DVD.create({
 //         title: request.body.title,
@@ -32,7 +30,7 @@ app.use(DVDRouter);
 // });
 
 
-///Get all function//////////////////////////////////////////////////////
+//////////////////////Get all function//////////////////////////////////////////////////////
 // app.get("/DVD/getallDVDs", async (request, response) => {
 //     const allDVDs = await DVD.find({});
 
@@ -45,8 +43,8 @@ app.use(DVDRouter);
 // });
 
 
-///Generic update function//////////////////////////////////////////////////////
-// app.put("/DVD/updateDVDactor", async (request, response) => {
+///////////////Generic/update any field function//////////////////////////////////////////////////////
+// app.put("/DVD/updateDVD", async (request, response) => {
 //     const filterObj = { title: request.body.title };
 //     const updateObj = { [request.body.updateKey]: request.body.updateValue };
 //     const updatedDVD = await DVD.updateOne(filterObj, updateObj);
@@ -60,7 +58,7 @@ app.use(DVDRouter);
 // });
 
 
-///generic update  Json body example//////////////////////////////////////////////////////
+/////////////generic update  Json body example///////////////////////////////////////////////////
     // {
     // "title": "The Persuite of Happiness",
     // "updateKey": "actor", 
@@ -74,7 +72,7 @@ app.use(DVDRouter);
      // }
 
 
-/////Delete Function/////////////////////////////////////////////////////
+////////////////Delete Function/////////////////////////////////////////////////////
 // app.delete("/DVD/deleteDVD", async (request, response) => {
 //     const deletedDVD = await DVD.deleteOne({
 //         title: request.body.title,

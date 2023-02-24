@@ -31,7 +31,7 @@ const getallDVDs = async (request, response) => {
 
 ///////////////////////////////////////////////////////////
 
-const updateDVDactor = async (request, response) => {
+const updateDVD = async (request, response) => {
     const filterObj = { title: request.body.title };
     const updateObj = { [request.body.updateKey]: request.body.updateValue };
     const updatedDVD = await DVD.updateOne(filterObj, updateObj);
@@ -61,6 +61,6 @@ const deleteDVD = async (request, response) => {
 module.exports = {
     getallDVDs,
     addDVD,
-    updateDVDactor,
+    updateDVD,
     deleteDVD,
 };
