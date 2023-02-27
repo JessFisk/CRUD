@@ -31,6 +31,16 @@ const getallDVDs = async (request, response) => {
 
 ///////////////////////////////////////////////////////////
 
+const updateDVDActor = async (request, response) => {
+    const updateDVD = await DVD.updateOne(
+        { "actor": "Will Smith" },
+        { "actor": "Someone Else" });
+
+    response.json({ message: "Successfully Updated!", updateDVD: updateDVD });
+};
+
+///////////////////////////////////////////////////////////
+
 const updateDVD = async (request, response) => {
     const filterObj = { title: request.body.title };
     const updateObj = { [request.body.updateKey]: request.body.updateValue };
@@ -43,6 +53,7 @@ const updateDVD = async (request, response) => {
 
     response.json(successResponse);
 };
+
 ///////////////////////////////////////////////////////////
 const deleteDVD = async (request, response) => {
     const deletedDVD = await DVD.deleteOne({
@@ -56,11 +67,39 @@ const deleteDVD = async (request, response) => {
 
     response.json(successResponse);
 };
+
 ///////////////////////////////////////////////////////////
+
+const deleteManyDVD = async (request, response) => {
+    const deleteManyDVD = await DVD.deleteMany({});
+
+    const successResponse = {
+        message: "Successfully Deleted",
+        deleteManyDVD: deleteManyDVD
+    };
+
+    response.send(successResponse);
+};
+///////////////////////////////////////////////////////////
+
+const findDVD = async (request, response) => {
+    const findaDVD = await DVD.find({ title: request.params.movieTitle })
+
+    const successResponse = {
+        message: "DVD successfully found",
+        findDVD: findaDVD
+    }
+
+    response.json(successResponse);
+};
+
 
 module.exports = {
     getallDVDs,
     addDVD,
+    updateDVDActor,
     updateDVD,
     deleteDVD,
+    deleteManyDVD,
+    findDVD,
 };
